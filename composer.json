@@ -3,7 +3,8 @@
     "description": "base project for all further projects",
     "type": "project",
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "twig/twig": "^3.0"
     },
     "license": "MIT",
     "authors": [

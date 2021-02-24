@@ -1,0 +1,4 @@
+# exclusions
+/vendor
+/cache
+/.idea
