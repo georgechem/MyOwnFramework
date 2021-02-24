@@ -1,0 +1,16 @@
+{
+    "name": "etutor/my-own-framework",
+    "description": "base project for all further projects",
+    "type": "project",
+    "require": {
+        "php": "^7.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "root",
+            "email": "grzegorzchrymecki@php-developer.ie"
+        }
+    ]
+
+}
