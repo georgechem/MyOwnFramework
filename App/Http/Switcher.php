@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Http\Switcher;
+namespace App\Http;
 
 
 class Switcher
@@ -10,7 +10,7 @@ class Switcher
 
     public function __construct(array $server)
     {
-        print_r($server);
+
     }
 
 }

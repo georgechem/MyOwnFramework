@@ -14,22 +14,18 @@ $twig = new Environment($loader,[
 ]);
 
 /**
- * Autoloader for src|lib which map to Mvc|App
+ * Autoloader for Mvc|App
  */
 
 spl_autoload_register(function($class){
     $rootDirectory = dirname(__DIR__);
     $root_src = $rootDirectory.'/';
     $files_src = $root_src.str_replace('\\','/', $class).'.php';
-    echo $files_src;
 
-    $root_lib = $rootDirectory.'/lib/';
-    $files_lib = $root_lib.str_replace('\\','/', $class).'.php';
-
-
+    if(isset($files_src)){
         require $files_src;
-        require $files_lib;
 
+    }
 
 });
 
