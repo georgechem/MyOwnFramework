@@ -9,6 +9,7 @@ use App\Http\Switcher;
 use Mvc\Controllers\PagesController;
 
 $switcher = new Switcher($_SERVER);
+$switcher->register();
 
 if (isset($twig)) {
     $index = new PagesController($twig);

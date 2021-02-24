@@ -17,9 +17,10 @@ class PagesController
 
     public function index()
     {
+        /*
         return $this->twig->render('pages/index.html.twig',[
             'data' => $_SERVER,
-        ]);
+        ]);*/
     }
 
 }
