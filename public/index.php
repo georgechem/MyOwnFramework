@@ -10,5 +10,7 @@ $dotenv->load();
 
 require __DIR__ . '/../loaders/loader.php';
 
-$request = new Request();
+if (isset($twig)) {
+    $request = new Request($twig);
+}
 

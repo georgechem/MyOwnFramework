@@ -18,7 +18,11 @@ class Router
     private function start()
     {
         $this->route = Route::splitUri();
-        print_r($this->route);
+    }
+
+    public function getRoute()
+    {
+        return $this->route;
     }
 
 }
