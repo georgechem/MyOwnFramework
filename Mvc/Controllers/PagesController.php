@@ -6,12 +6,14 @@ namespace Mvc\Controllers;
 
 use Twig\Environment;
 
-class PagesController
+class PagesController extends BaseController
 {
     private $twig;
 
     public function __construct(Environment $twig)
     {
+        //parent::__construct();
+
         $this->twig = $twig;
     }
 

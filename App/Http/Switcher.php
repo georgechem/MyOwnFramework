@@ -5,6 +5,7 @@ namespace App\Http;
 
 
 use App\Http\Exceptions\SwitcherException;
+use Mvc\Controllers\BaseController;
 
 class Switcher
 {
@@ -17,14 +18,15 @@ class Switcher
         $this->uri = $server['REQUEST_URI'];
     }
 
-    public function register($regex = '/[a-zA-Z0-9-]+/')
+    public function register($regex = '/[a-zA-Z0-9-\/]+/')
     {
+        $path = Slicer::verifyPathRegex($regex, $this->uri);
 
-        if(!Slicer::verifyPathRegex($regex, $this->uri)){
+        if(!$path && gettype($path) === 'boolean'){
             exit((new SwitcherException())->report());
         }
 
-        $this->path = Slicer::separatePath($this->uri);
+        new BaseController($path);
 
 
     }
