@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\BaseController;
 use App\Http\Request\Request;
 use App\Http\Response\Response;
 use Dotenv\Dotenv;
@@ -16,4 +17,8 @@ $request = new Request();
 
 
 $response = new Response($request);
-//print_r($request);
+
+if (isset($twig)) {
+    $controller = new BaseController($twig);
+}
+

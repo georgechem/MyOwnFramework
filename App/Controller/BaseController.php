@@ -8,9 +8,12 @@ namespace App\Controller;
 class BaseController
 {
 
-    public function __construct()
-    {
 
+    private $twig;
+
+    public function __construct($twig)
+    {
+        $this->twig = $twig;
     }
 
 
