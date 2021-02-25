@@ -5,12 +5,10 @@ title
 {% endblock %}
 
 {% block body %}
+{% for item in request %}
+{{ item}}
+{% endfor %}
 
-    {% for key, value in data %}
-
-        <p style="margin: 5px;padding:5px;font-weight: bold;">$_SERVER [{{ key}}]<span style="font-weight: normal;"> = {{ value }}</span></p>
-
-    {% endfor %}
 {% endblock %}
 
 {% block javascripts %}

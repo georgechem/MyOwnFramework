@@ -6,17 +6,21 @@ namespace Mvc\Controllers;
 
 use App\Controller\BaseController;
 
+
 class PagesController extends BaseController
 {
 
     public function __construct()
     {
-        parent::__construct($this->twig, $this->request);
+        parent::__construct();
     }
 
-    public function index()
+    public function index($params = [])
     {
-        echo $this->twig->render('pages/index.html.twig', []);
+
+        /*echo $this->twig->render('pages/index.html.twig', [
+            'request' => '',
+        ]);*/
     }
 
 }

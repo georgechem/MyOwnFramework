@@ -3,9 +3,8 @@
 
 namespace App\Http\Request;
 
-
-use App\Controller\BaseController;
 use App\Http\Router\Router;
+
 
 class Request
 {
@@ -13,16 +12,13 @@ class Request
 
     private array $request;
 
-    private $baseController;
 
-    private $twig;
-
-    public function __construct($twig)
+    public function __construct()
     {
         $this->router = new Router();
-        $this->twig = $twig;
         $this->setRequest();
-        $this->initBaseController();
+        //$this->initBaseController();
+        $this->checkController();
     }
     private function setRequest()
     {
@@ -37,9 +33,42 @@ class Request
         ];
     }
 
+    public function getRequest()
+    {
+        return $this->request;
+    }
+    /*
     private function initBaseController()
     {
-        $this->baseController = new BaseController($this->twig, $this->request);
+        $this->baseController = new BaseController();
+
+    }*/
+
+    private function checkController()
+    {
+        $routes = $this->router->getRoute();
+        $controller = ucwords($routes['controller']).'Controller';
+        $controllerName = null;
+        $method = $routes['method'];
+        $methodName = null;
+        $params = $routes['params'];
+
+        $className = "\\Mvc\Controllers\\".$controller;
+
+        if(class_exists($className)){
+
+            $controllerName = new $className();
+        }else{
+            $controllerName = new \Mvc\Controllers\ PagesController();
+        }
+        if(method_exists($controllerName, $method)){
+            $controllerName->$method($params);
+        }else{
+            $controllerName->index($params);
+        }
+
+
+
 
     }
 
