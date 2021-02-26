@@ -1,8 +1,6 @@
 <?php
 
-use App\Controller\BaseController;
 use App\Http\Request\Request;
-use App\Http\Response\Response;
 use Dotenv\Dotenv;
 
 require __DIR__.'/../vendor/autoload.php';
@@ -16,13 +14,7 @@ require __DIR__ . '/../loaders/loader.php';
 $request = new Request();
 
 if (isset($twig)) {
-    $baseController = new BaseController($twig, $request);
+    print_r($request);
 }
 
-/*
-$response = new Response($request);
 
-if (isset($twig)) {
-    $baseController = new BaseController($twig);
-}
-*/

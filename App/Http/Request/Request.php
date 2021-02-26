@@ -23,7 +23,6 @@ class Request
     {
         $this->router = new Router();
         $this->setRequest();
-        //$this->initBaseController();
         $this->checkController();
     }
     private function setRequest()
@@ -42,10 +41,6 @@ class Request
     public function getRequest()
     {
         return $this->request;
-    }
-    public function setController()
-    {
-
     }
 
     public function getController()
@@ -77,33 +72,6 @@ class Request
         $this->methodName = $method;
 
         $this->params = $params;
-
-        /*
-        if(class_exists($className)){
-
-            $this->controllerName = "\\Mvc\Controllers\\".$controller;
-            //$controllerName = new $className();
-        }else{
-
-            //$controllerName = new \Mvc\Controllers\ PagesController();
-        }
-        $this->methodName = $method($params);
-
-        if(method_exists($controllerName, $method)){
-
-
-            //$controllerName->$method($params);
-        }else{
-            //$controllerName->index($params);
-        }
-
-        $this->params = $params;
-
-        return [
-            'controllerName' => $this->controllerName,
-            'methodName' => $this->methodName,
-            'params' => $this->params,
-        ];*/
 
 
     }
