@@ -12,6 +12,12 @@ class Request
 
     private array $request;
 
+    private string $controllerName;
+
+    private string $methodName;
+
+    private array $params;
+
 
     public function __construct()
     {
@@ -37,12 +43,19 @@ class Request
     {
         return $this->request;
     }
-    /*
-    private function initBaseController()
+    public function setController()
     {
-        $this->baseController = new BaseController();
 
-    }*/
+    }
+
+    public function getController()
+    {
+        return [
+            'controllerName' => $this->controllerName,
+            'methodName' => $this->methodName,
+            'params' => $this->params,
+        ];
+    }
 
     private function checkController()
     {
@@ -56,18 +69,41 @@ class Request
         $className = "\\Mvc\Controllers\\".$controller;
 
         if(class_exists($className)){
-
-            $controllerName = new $className();
+            $this->controllerName = $className;
         }else{
-            $controllerName = new \Mvc\Controllers\ PagesController();
+            $this->controllerName = "\\Mvc\\Controllers\\PagesController";
         }
+
+        $this->methodName = $method;
+
+        $this->params = $params;
+
+        /*
+        if(class_exists($className)){
+
+            $this->controllerName = "\\Mvc\Controllers\\".$controller;
+            //$controllerName = new $className();
+        }else{
+
+            //$controllerName = new \Mvc\Controllers\ PagesController();
+        }
+        $this->methodName = $method($params);
+
         if(method_exists($controllerName, $method)){
-            $controllerName->$method($params);
+
+
+            //$controllerName->$method($params);
         }else{
-            $controllerName->index($params);
+            //$controllerName->index($params);
         }
 
+        $this->params = $params;
 
+        return [
+            'controllerName' => $this->controllerName,
+            'methodName' => $this->methodName,
+            'params' => $this->params,
+        ];*/
 
 
     }

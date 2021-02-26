@@ -15,10 +15,14 @@ require __DIR__ . '/../loaders/loader.php';
 
 $request = new Request();
 
+if (isset($twig)) {
+    $baseController = new BaseController($twig, $request);
+}
 
+/*
 $response = new Response($request);
 
 if (isset($twig)) {
-    $controller = new BaseController($twig);
+    $baseController = new BaseController($twig);
 }
-
+*/
