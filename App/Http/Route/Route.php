@@ -21,7 +21,11 @@ class Route
 
         if (isset($uriExplode[1]) && !empty($uriExplode[1])) {
             preg_match('/[a-zA-Z-]+/', $uriExplode[1], $tmp);
-            self::$controller = $tmp[0];
+            if (!empty($tmp)) {
+                self::$controller = $tmp[0];
+            } else {
+                self::$controller = 'pages';
+            }
         } else {
             self::$controller = 'pages';
         }
