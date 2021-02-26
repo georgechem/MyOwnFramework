@@ -5,8 +5,7 @@
     "require": {
         "php": "^7.4",
         "twig/twig": "^3.0",
-        "vlucas/phpdotenv": "^5.3",
-        "symfony/finder": "^5.2"
+        "vlucas/phpdotenv": "^5.3"
     },
     "license": "MIT",
     "authors": [
@@ -15,5 +14,4 @@
             "email": "grzegorzchrymecki@php-developer.ie"
         }
     ]
-
 }

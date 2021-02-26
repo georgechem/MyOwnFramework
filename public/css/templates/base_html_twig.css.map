@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAE;EACA,UAAU,EAAE,UAAU;;AAExB,IAAK;EACH,gBAAgB,EAAE,SAAS",
+"sources": ["base_html_twig.scss"],
+"names": [],
+"file": "base_html_twig.css"
+}
