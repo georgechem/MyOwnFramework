@@ -3,7 +3,7 @@
 /**
  * FRAMEWORK - variables
  */
-require __DIR__ . '/../config/variables.php';
+$_ENV['variable'] = require __DIR__ . '/../config/variables.php';
 
 
 /**
@@ -13,9 +13,9 @@ require __DIR__ . '/../config/variables.php';
 require __DIR__ . '/packages/framework.php';
 
 /**
- * COMPONENT - finder
+ * COMPONENT -
  */
-require __DIR__ . '/packages/finder.php';
+
 
 
 

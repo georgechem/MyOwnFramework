@@ -6,7 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block stylesheets %}
-    <link rel="stylesheet" href="" media="screen">
+    {# <link rel="stylesheet" href="{{ var[root_path] }}css/templates/base_html_twig.css" media="screen">#}
+        <link rel="stylesheet" href="/css/templates/base_html_twig.css" media="screen">
     {% endblock %}
     <title>
         {% block title %}{% endblock %}
@@ -15,6 +16,7 @@
 </head>
 <body>
 {% block body %}
+
 
 {% endblock %}
 

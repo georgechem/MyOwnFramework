@@ -1,5 +1,6 @@
 <?php
 
-$_ENV['variable'] = [
-    'root_path' => __DIR__.'/../',
+return [
+    'variable_key' => 'variable_value',
 ] ;
+
