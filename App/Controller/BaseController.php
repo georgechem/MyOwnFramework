@@ -4,6 +4,8 @@
 namespace App\Controller;
 
 
+use Mvc\Extensions\Twig\TwigExtension;
+
 class BaseController implements ControllerInterface
 {
     protected $twig;
@@ -12,7 +14,11 @@ class BaseController implements ControllerInterface
 
     public function __construct()
     {
+        // Load TWIG
         $this->twig = require __DIR__ . '/../../loaders/packages/twig.php';
+        // Add TWIG EXTENSIONS
+        $extension = new TwigExtension($this->twig);
+
 
     }
     public function index()
