@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,CAAE;EACA,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;;AAEZ,SAAU;EACR,KAAK,EAAC,KAAK;EACX,QAAQ,EAAE,KAAK;EACf,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,IAAI;EACX,iBAAS;IACP,OAAO,EAAE,GAAG;IACZ,MAAM,EAAE,OAAO",
+"sources": ["profiler.scss"],
 "names": [],
 "file": "profiler.css"
 }
