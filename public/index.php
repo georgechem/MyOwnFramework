@@ -14,9 +14,8 @@ require __DIR__ . '/../loaders/loader.php';
 
 $request = new Request();
 
-//$baseController = new BaseController();
 BaseController::initController($request->getController());
-//print_r($request);
+
 
 
 

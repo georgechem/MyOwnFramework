@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 
-class BaseController
+class BaseController implements ControllerInterface
 {
     protected $twig;
 
@@ -14,6 +14,10 @@ class BaseController
     {
         $this->twig = require __DIR__ . '/../../loaders/packages/twig.php';
 
+    }
+    public function index()
+    {
+        echo 'Your page not found - 404';
     }
 
     public function getTwig()

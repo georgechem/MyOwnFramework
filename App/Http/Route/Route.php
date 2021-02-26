@@ -29,7 +29,11 @@ class Route
 
         if (isset($uriExplode[2]) && !empty($uriExplode[2])) {
             preg_match('/[a-zA-Z-]+/', $uriExplode[2], $tmp);
-            self::$method = $tmp[0];
+            if(!empty($tmp)){
+                self::$method = $tmp[0];
+            }else{
+                self::$method = 'index';
+            }
         } else {
             self::$method = 'index';
         }
