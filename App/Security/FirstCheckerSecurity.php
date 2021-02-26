@@ -13,7 +13,16 @@ class FirstCheckerSecurity extends Security
     {
         // IS session Active or None - ERROR on DISABLED
         self::isSession();
+        self::sessionStart();
+        $_SESSION[session_name()] = session_id();
         return true;
+    }
+    private static function sessionStart()
+    {
+        session_start([
+            'cookie_lifetime' => $_ENV['variable']['cookie_lifetime'] ?? 3600,
+            'read_and_close' => $_ENV['variable']['read_and_close'] ?? false,
+        ]);
     }
 
 
@@ -28,6 +37,9 @@ class FirstCheckerSecurity extends Security
             exit($e->getInfo());
         }
 
+        return $session_status;
+
     }
+
 
 }
