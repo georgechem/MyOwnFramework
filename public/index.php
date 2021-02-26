@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\BaseController;
 use App\Http\Request\Request;
 use Dotenv\Dotenv;
 
@@ -13,8 +14,10 @@ require __DIR__ . '/../loaders/loader.php';
 
 $request = new Request();
 
-if (isset($twig)) {
-    print_r($request);
-}
+//$baseController = new BaseController();
+BaseController::initController($request->getController());
+//print_r($request);
+
+
 
 
