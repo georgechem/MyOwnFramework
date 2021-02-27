@@ -14,6 +14,9 @@ class BaseController implements ControllerInterface
 
     public function __construct()
     {
+        // LOAD DOCTRINE
+        $this->em = require __DIR__ . '/../../loaders/packages/doctrine.php';
+
         // Load TWIG
         $this->twig = require __DIR__ . '/../../loaders/packages/twig.php';
         // Add TWIG EXTENSIONS
