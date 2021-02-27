@@ -10,12 +10,14 @@ class BaseController implements ControllerInterface
 {
     protected $twig;
 
+    protected $em;
+
     public static $controller;
 
     public function __construct()
     {
         // LOAD DOCTRINE
-        $this->em = require __DIR__ . '/../../loaders/packages/doctrine.php';
+        $this->em = require __DIR__ . '/../../loaders/packages/doctrine-cli.php';
 
         // Load TWIG
         $this->twig = require __DIR__ . '/../../loaders/packages/twig.php';
