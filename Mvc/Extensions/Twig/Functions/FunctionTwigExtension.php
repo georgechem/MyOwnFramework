@@ -3,12 +3,30 @@
 
 namespace Mvc\Extensions\Twig\Functions;
 
+use Twig\Environment;
+use Twig\TwigFunction;
 
 class FunctionTwigExtension
 {
-    public static function my_fun($twig, $function)
+
+    private Environment $twig;
+
+    public function __construct($twig)
     {
-        $twig->addFunction($function);
+        $this->twig = $twig;
+        // FUNCTION my_fun
+        $this->my_fun();
+    }
+
+    public function my_fun()
+    {
+        $function = new TwigFunction('my_fun', function(){
+            // BODY of my_fun TWIG
+            echo 'ok';
+        });
+
+        $this->twig->addFunction($function);
+
     }
 
 }
