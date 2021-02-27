@@ -14,10 +14,13 @@ class Route
 
     private static array $uri;
 
-    public static function splitUri()
+    public static function splitUri($test = false)
     {
-        $uriExplode = explode('/',$_SERVER['REQUEST_URI'], 4);
-
+        if(!$test){
+            $uriExplode = explode('/',$_SERVER['REQUEST_URI'], 4);
+        }else{
+            $uriExplode = explode('/',$test, 4);
+        }
 
         if (isset($uriExplode[1]) && !empty($uriExplode[1])) {
             preg_match('/[a-zA-Z-]+/', $uriExplode[1], $tmp);
