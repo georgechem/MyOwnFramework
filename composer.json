@@ -14,5 +14,8 @@
             "name": "root",
             "email": "grzegorzchrymecki@php-developer.ie"
         }
-    ]
+    ],
+    "require-dev": {
+        "behat/behat": "^3.8"
+    }
 }
