@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% block stylesheets %}
         {# Styles for components #}
-        <link rel="stylesheet" href="/css/components/profiler.css" media="screen">
+        <link rel="stylesheet" href="{{ css('components/profiler.css') }}" media="screen">
         {# Styles - general #}
-        <link rel="stylesheet" href="/css/templates/base_html_twig.css" media="screen">
+        <link rel="stylesheet" href="{{ css('templates/base_html_twig.css')}}" media="screen">
     {% endblock %}
     <title>
         {% block title %}{% endblock %}
