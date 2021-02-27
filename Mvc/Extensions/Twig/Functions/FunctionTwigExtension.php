@@ -16,9 +16,10 @@ class FunctionTwigExtension
         $this->twig = $twig;
         // FUNCTION my_fun
         $this->my_fun();
+
     }
 
-    public function my_fun()
+    private function my_fun()
     {
         $function = new TwigFunction('my_fun', function(){
             // BODY of my_fun TWIG
