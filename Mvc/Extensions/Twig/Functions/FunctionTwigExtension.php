@@ -23,7 +23,11 @@ class FunctionTwigExtension
     {
         $function = new TwigFunction('my_fun', function(){
             // BODY of my_fun TWIG
-            echo 'ok';
+            if(!empty($_SESSION['PHPSESSID'])){
+                return 'ACTIVE';
+            }else{
+                return 'NOT-ACTIVE';
+            }
         });
 
         $this->twig->addFunction($function);
